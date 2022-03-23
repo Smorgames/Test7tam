@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 705427218}
   _animator: {fileID: 55382981}
-  _movement: {fileID: 0}
+  _movement: {fileID: 619136365}
 --- !u!1 &619136363
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotator: {fileID: 1867193844}
   _movingObject: {fileID: 5811634270785579100}
+  _moveField: {fileID: 0}
 --- !u!1 &705427216
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +317,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5811634270785579100}
   - component: {fileID: 189606314}
-  m_Layer: 0
+  - component: {fileID: 252978011882205094}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,3 +364,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &252978011882205094
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811634270785579102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.12257737}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.628175, y: 0.6345087}
+  m_EdgeRadius: 0
