@@ -90,6 +90,7 @@ MonoBehaviour:
   _health: {fileID: 705427218}
   _animator: {fileID: 55382981}
   _movement: {fileID: 619136365}
+  _collider: {fileID: 252978011882205094}
 --- !u!1 &619136363
 GameObject:
   m_ObjectHideFlags: 0

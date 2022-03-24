@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Joystick
-  - AttackButton
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ namespace Logic.Enemy
         [SerializeField] private Health _health;
         [SerializeField] private EnemyAnimator _animator;
         [SerializeField] private EnemyMovement _movement;
+        [SerializeField] private Collider2D _collider;
 
         private Game _game;
 
@@ -24,6 +25,7 @@ namespace Logic.Enemy
         private void EnemyDead()
         {
             _movement.enabled = false;
+            _collider.enabled = false;
             _game.EnemyDead();
             _animator.TriggerDead();
         }
