@@ -38,12 +38,9 @@ namespace Infrastructure
         public void Restart() => 
             StartCoroutine(RestartCoroutine());
 
-        private static bool CurrentPlatformWindows()
-        {
-            Debug.Log(Application.platform);
-            return Application.platform == RuntimePlatform.WindowsEditor ||
-                   Application.platform == RuntimePlatform.WindowsPlayer;
-        }
+        private static bool CurrentPlatformWindows() =>
+            Application.platform == RuntimePlatform.WindowsEditor ||
+            Application.platform == RuntimePlatform.WindowsPlayer;
 
         private IEnumerator RestartCoroutine()
         {
