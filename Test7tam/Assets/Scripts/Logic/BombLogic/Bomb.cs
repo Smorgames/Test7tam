@@ -1,6 +1,7 @@
+using Logic.UniversalComponents;
 using UnityEngine;
 
-namespace Logic
+namespace Logic.BombLogic
 {
     public class Bomb : MonoBehaviour
     {
@@ -42,12 +43,6 @@ namespace Logic
         
             Destroy(explosion, DestroyTime);
             Destroy(gameObject);
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, ExplodeRadius);
         }
     }
 }

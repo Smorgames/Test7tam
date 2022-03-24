@@ -1,3 +1,4 @@
+using Logic.GameField;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,11 +18,6 @@ namespace Logic.Enemy
         private Vector2Int _currentCoordinates;
         private float _speed;
         private bool _initialized;
-
-        private void Start()
-        {
-            Initialize(_moveField, new Vector2Int(0, 0), 2f);
-        }
 
         private void Update()
         {

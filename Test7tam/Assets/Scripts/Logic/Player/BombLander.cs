@@ -1,3 +1,4 @@
+using Infrastructure;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,8 @@ namespace Logic.Player
     public class BombLander : MonoBehaviour
     {
         private const float ReloadTime = 3f;
-    
+
+        [SerializeField] private Game _game;
         [SerializeField] private GameObject _bomb;
         [SerializeField] private Slider _slider;
 
@@ -15,7 +17,7 @@ namespace Logic.Player
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && _reloaded)
+            if (_game.GetInputService().IsAttackButtonUp() && _reloaded)
                 LandBomb();
 
             ReloadProcess();

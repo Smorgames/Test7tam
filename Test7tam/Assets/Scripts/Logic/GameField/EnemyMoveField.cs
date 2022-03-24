@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Logic.Enemy
+namespace Logic.GameField
 {
     public class EnemyMoveField : MonoBehaviour
     {
@@ -9,12 +9,14 @@ namespace Logic.Enemy
 
         private Transform[,] _movePoints;
 
-        private void Start() => 
+        private void Awake() => 
             InitMovePoints();
 
         public Vector2Int GetSize() => new Vector2Int(_length, _height);
 
         public Transform GetPoint(Vector2Int coordinate) => _movePoints[coordinate.x, coordinate.y];
+        
+        public Transform GetPoint(int x, int y) => GetPoint(new Vector2Int(x, y));
 
         private void InitMovePoints()
         {
@@ -27,8 +29,6 @@ namespace Logic.Enemy
 
                 _movePoints[x, y] = transform.GetChild(i);
             }
-        
-            //Utils.DebugTwoDimensionArray(_movePoints);
         }
     }
 }

@@ -1,3 +1,5 @@
+using Infrastructure;
+using Logic.UniversalComponents;
 using UnityEngine;
 
 namespace Logic.Enemy
@@ -8,15 +10,21 @@ namespace Logic.Enemy
         [SerializeField] private EnemyAnimator _animator;
         [SerializeField] private EnemyMovement _movement;
 
+        private Game _game;
+
         private void Awake() => 
             _health.OnDead += EnemyDead;
 
         private void OnDestroy() => 
             _health.OnDead -= EnemyDead;
 
+        public void Construct(Game game) =>
+            _game = game;
+
         private void EnemyDead()
         {
             _movement.enabled = false;
+            _game.EnemyDead();
             _animator.TriggerDead();
         }
     }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Logic
+namespace Logic.UniversalComponents
 {
     public class Health : MonoBehaviour
     {

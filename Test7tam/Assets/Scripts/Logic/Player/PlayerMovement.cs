@@ -1,3 +1,4 @@
+using Infrastructure;
 using UnityEngine;
 
 namespace Logic.Player
@@ -7,6 +8,7 @@ namespace Logic.Player
         private const string HorizontalAxis = "Horizontal";
         private const string VerticalAxis = "Vertical";
 
+        [SerializeField] private Game _game;
         [SerializeField] private PlayerAnimator _animator;
         [SerializeField] private Rigidbody2D _rigidBody;
         [SerializeField] private float _speed;
@@ -15,7 +17,7 @@ namespace Logic.Player
 
         private void Update()
         {
-            _inputAxis = new Vector2(Input.GetAxisRaw(HorizontalAxis), Input.GetAxisRaw(VerticalAxis)).normalized;
+            _inputAxis = _game.GetInputService().GetAxis();
             _animator.SetSpeed(_inputAxis.magnitude);
         }
 
@@ -23,5 +25,7 @@ namespace Logic.Player
             _rigidBody.velocity = _inputAxis * _speed * Time.fixedDeltaTime;
 
         public Vector2 GetAxis() => _inputAxis;
+
+        public void NullifySpeed() => _rigidBody.velocity = Vector2.zero;
     }
 }
